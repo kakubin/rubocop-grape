@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "grape/version"
+require_relative 'grape/version'
 
 module Rubocop
   module Grape
