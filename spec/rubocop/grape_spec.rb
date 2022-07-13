@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe Rubocop::Grape do
+RSpec.describe RuboCop::Grape do
   it 'has a version number' do
-    expect(Rubocop::Grape::VERSION).not_to be nil
+    expect(RuboCop::Grape::VERSION).not_to be nil
   end
 
   it 'does something useful' do

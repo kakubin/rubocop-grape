@@ -4,7 +4,7 @@ require_relative 'lib/rubocop/grape/version'
 
 Gem::Specification.new do |spec|
   spec.name = 'rubocop-grape'
-  spec.version = Rubocop::Grape::VERSION
+  spec.version = RuboCop::Grape::VERSION
   spec.authors = ['Akito Hikasa']
   spec.email = ['wetsand.wfs@gmail.com']
 
