@@ -1,1 +1,4 @@
-
+Grape/RouteParamType:
+  Enabled: true
+  Safe: false
+  VersionAdded: '0.1'
