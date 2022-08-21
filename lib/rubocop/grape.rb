@@ -3,6 +3,7 @@
 require_relative 'grape/version'
 
 module RuboCop
+  # RuboCop Grape project namespace
   module Grape
     PROJECT_ROOT = Pathname.new(__dir__).parent.parent.expand_path.freeze
     CONFIG_DEFAULT = PROJECT_ROOT.join('config', 'default.yml').freeze

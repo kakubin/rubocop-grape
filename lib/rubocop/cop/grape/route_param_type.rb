@@ -3,6 +3,18 @@
 module RuboCop
   module Cop
     module Grape
+      # Checks whether type is specified at points where `Grape::API#route_param` is called.
+      #
+      # @example
+      #
+      #   # bad
+      #   route_param :id
+      #
+      #   # good
+      #   route_param :id, type: Integer
+      #   route_param :filename, type: String
+      #   route_param :status, type: String, desc: 'Resource Status'
+      #
       class RouteParamType < Base
         MSG = 'Define Parameter Type'
 
