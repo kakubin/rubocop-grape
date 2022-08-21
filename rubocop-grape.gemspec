@@ -16,6 +16,7 @@ Gem::Specification.new do |spec|
 
   spec.homepage = 'https://github.com/kakubin/rubocop-grape'
   spec.required_ruby_version = '>= 2.6.0'
+  spec.license = 'MIT'
 
   spec.metadata['allowed_push_host'] = "TODO: Set to your gem server 'https://example.com'"
 
