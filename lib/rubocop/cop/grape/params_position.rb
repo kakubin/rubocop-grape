@@ -27,7 +27,7 @@ module RuboCop
         PATTERN
 
         def_node_matcher :http_method_node?, <<~PATTERN
-          (block (send _ :get) ...)
+          (block (send _ {:get :post :put :patch :delete}) ...)
         PATTERN
 
         def on_block(node)
