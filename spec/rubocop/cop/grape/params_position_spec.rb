@@ -63,5 +63,49 @@ RSpec.describe RuboCop::Cop::Grape::ParamsPosition, :config do
         end
       RUBY
     end
+
+    it 'reports a offence on post method' do
+      expect_offense(<<~RUBY)
+        post do
+          params do
+          ^^^^^^^^^ It's no sense to define params in HTTP method's scope
+            requires :id, type: Integer
+          end
+        end
+      RUBY
+    end
+
+    it 'reports a offence on put method' do
+      expect_offense(<<~RUBY)
+        put do
+          params do
+          ^^^^^^^^^ It's no sense to define params in HTTP method's scope
+            requires :id, type: Integer
+          end
+        end
+      RUBY
+    end
+
+    it 'reports a offence on patch method' do
+      expect_offense(<<~RUBY)
+        patch do
+          params do
+          ^^^^^^^^^ It's no sense to define params in HTTP method's scope
+            requires :id, type: Integer
+          end
+        end
+      RUBY
+    end
+
+    it 'reports a offence on delete method' do
+      expect_offense(<<~RUBY)
+        delete do
+          params do
+          ^^^^^^^^^ It's no sense to define params in HTTP method's scope
+            requires :id, type: Integer
+          end
+        end
+      RUBY
+    end
   end
 end

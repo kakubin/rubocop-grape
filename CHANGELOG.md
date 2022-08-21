@@ -4,6 +4,7 @@
 
 ### Bug fixes
 * [#6](https://github.com/kakubin/rubocop-grape/pull/6): fix typo. ([@kakubin][])
+* [#7](https://github.com/kakubin/rubocop-grape/pull/7): support other methods on Grape/ParamsPosition. ([@kakubin][])
 
 
 ## [0.1.1] - 2022-08-21
