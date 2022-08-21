@@ -18,13 +18,13 @@ module RuboCop
       class RouteParamType < Base
         MSG = 'Define Parameter Type'
 
-        def_node_matcher :route_param?, <<~RUBY
+        def_node_matcher :route_param?, <<~PATTERN
           (send _ :route_param ({sym str} _) ...)
-        RUBY
+        PATTERN
 
-        def_node_matcher :include_key_type?, <<~RUBY
+        def_node_matcher :include_key_type?, <<~PATTERN
           (pair (sym :type) _)
-        RUBY
+        PATTERN
 
         def on_send(node)
           return unless route_param?(node)
