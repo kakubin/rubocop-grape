@@ -33,14 +33,14 @@ module RuboCop
         def on_block(node)
           return unless http_method_node?(node)
 
-          collect_violationg_nodes(node).each(&method(:add_offense))
+          collect_violating_nodes(node).each(&method(:add_offense))
         end
 
-        def collect_violationg_nodes(node, collector = [])
+        def collect_violating_nodes(node, collector = [])
           collector.push(node) if node.type == :block && params_block?(node)
 
           node.children.each do |descendant|
-            collect_violationg_nodes(descendant, collector) if descendant.is_a?(Parser::AST::Node)
+            collect_violating_nodes(descendant, collector) if descendant.is_a?(Parser::AST::Node)
           end
 
           collector
