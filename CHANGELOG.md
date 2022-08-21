@@ -1,5 +1,11 @@
 ## [Unreleased]
 
+## [0.1.2] - 2022-08-21
+
+### Bug fixes
+* [#6](https://github.com/kakubin/rubocop-grape/pull/6): fix typo. ([@kakubin][])
+
+
 ## [0.1.1] - 2022-08-21
 
 ### New Features
