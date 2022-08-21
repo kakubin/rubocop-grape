@@ -2,3 +2,8 @@ Grape/RouteParamType:
   Enabled: true
   Safe: false
   VersionAdded: '0.1'
+
+Grape/ParamsPosition:
+  Enabled: true
+  Safe: false
+  VersionAdded: '0.1'
