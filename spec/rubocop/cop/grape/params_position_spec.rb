@@ -64,6 +64,17 @@ RSpec.describe RuboCop::Cop::Grape::ParamsPosition, :config do
       RUBY
     end
 
+    it 'reports a offence on named endpoint' do
+      expect_offense(<<~RUBY)
+        get :index do
+          params do
+          ^^^^^^^^^ It's no sense to define params in HTTP method's scope
+            requires :id, type: Integer
+          end
+        end
+      RUBY
+    end
+
     it 'reports a offence on post method' do
       expect_offense(<<~RUBY)
         post do
