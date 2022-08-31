@@ -1,5 +1,7 @@
 # RuboCop Grape
 
+[![Actions Status](https://github.com/kakubin/rubocop-grape/workflows/Ruby/badge.svg?branch=main)](https://github.com/kakubin/rubocop-grape/actions?query=workflow%3ARuby)
+
 [RuboCop](https://github.com/rubocop/rubocop) extension for [Grape](https://rubygems.org/gems/grape/versions/0.16.2).
 
 ## Installation
