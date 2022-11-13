@@ -2,7 +2,7 @@
 
 RSpec.describe RuboCop::Cop::Grape::ParamsPosition, :config do
   context 'if params declared on exact position' do
-    it 'will report no offences' do
+    it 'will report no offenses' do
       expect_no_offenses(<<~RUBY)
         params do
           requires :user_id, type: Integer
@@ -15,7 +15,7 @@ RSpec.describe RuboCop::Cop::Grape::ParamsPosition, :config do
   end
 
   context 'if params not defined' do
-    it 'will reports no offences' do
+    it 'will reports no offenses' do
       expect_no_offenses(<<~RUBY)
         get do
           User.find(params[:user_id])
@@ -25,7 +25,7 @@ RSpec.describe RuboCop::Cop::Grape::ParamsPosition, :config do
   end
 
   context 'if params declared on wrong position' do
-    it 'reports a offence' do
+    it 'reports a offense' do
       expect_offense(<<~RUBY)
         get do
           params do
@@ -36,7 +36,7 @@ RSpec.describe RuboCop::Cop::Grape::ParamsPosition, :config do
       RUBY
     end
 
-    it 'reports a offence even though deep nested' do
+    it 'reports a offense even though deep nested' do
       expect_offense(<<~RUBY)
         get do
           Rails.log.info 'Process Start'
@@ -48,7 +48,7 @@ RSpec.describe RuboCop::Cop::Grape::ParamsPosition, :config do
       RUBY
     end
 
-    it 'reports two offences' do
+    it 'reports two offenses' do
       expect_offense(<<~RUBY)
         get do
           params do
@@ -64,7 +64,7 @@ RSpec.describe RuboCop::Cop::Grape::ParamsPosition, :config do
       RUBY
     end
 
-    it 'reports a offence on named endpoint' do
+    it 'reports a offense on named endpoint' do
       expect_offense(<<~RUBY)
         get :index do
           params do
@@ -75,7 +75,7 @@ RSpec.describe RuboCop::Cop::Grape::ParamsPosition, :config do
       RUBY
     end
 
-    it 'reports a offence on post method' do
+    it 'reports a offense on post method' do
       expect_offense(<<~RUBY)
         post do
           params do
@@ -86,7 +86,7 @@ RSpec.describe RuboCop::Cop::Grape::ParamsPosition, :config do
       RUBY
     end
 
-    it 'reports a offence on put method' do
+    it 'reports a offense on put method' do
       expect_offense(<<~RUBY)
         put do
           params do
@@ -97,7 +97,7 @@ RSpec.describe RuboCop::Cop::Grape::ParamsPosition, :config do
       RUBY
     end
 
-    it 'reports a offence on patch method' do
+    it 'reports a offense on patch method' do
       expect_offense(<<~RUBY)
         patch do
           params do
@@ -108,7 +108,7 @@ RSpec.describe RuboCop::Cop::Grape::ParamsPosition, :config do
       RUBY
     end
 
-    it 'reports a offence on delete method' do
+    it 'reports a offense on delete method' do
       expect_offense(<<~RUBY)
         delete do
           params do
