@@ -1,5 +1,17 @@
 ## [Unreleased]
 
+## [0.2.0] - 2022-11-13
+
+### New Features
+* [#10](https://github.com/kakubin/rubocop-grape/pull/10): add new cop Grape/Ivar. ([@kakubin][])
+
+### Changes
+* [#9](https://github.com/kakubin/rubocop-grape/pull/9): Docs. ([@kakubin][])
+* [#11](https://github.com/kakubin/rubocop-grape/pull/11): s/offence/offense. ([@kakubin][])
+
+### Bug fixes
+* [#8](https://github.com/kakubin/rubocop-grape/pull/8): bugfix: match named endpoint definition for Grape/ParamsPosition. ([@kakubin][])
+
 ## [0.1.2] - 2022-08-21
 
 ### Bug fixes
