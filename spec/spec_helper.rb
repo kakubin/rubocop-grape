@@ -3,6 +3,8 @@
 require 'rubocop-grape'
 require 'rubocop/rspec/support'
 
+Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].sort.each { |f| require f }
+
 RSpec.configure do |config|
   config.include RuboCop::RSpec::ExpectOffense
 

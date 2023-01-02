@@ -1,3 +1,6 @@
+AllCops:
+  GrapeDir: 'app/api'
+
 Grape/RouteParamType:
   Enabled: true
   Safe: false

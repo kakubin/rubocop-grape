@@ -8,4 +8,6 @@ require_relative 'rubocop/grape/inject'
 
 RuboCop::Grape::Inject.defaults!
 
+require_relative 'rubocop/grape/grape_files'
+
 require_relative 'rubocop/cop/grape_cops'
