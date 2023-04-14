@@ -1,6 +1,12 @@
 AllCops:
   GrapeDir: 'app/api'
 
+Grape/FieldName:
+  EnforcedStyle: snake_case
+  SupportedStyles:
+    - snake_case
+    - camelCase
+
 Grape/RouteParamType:
   Enabled: true
   Safe: false
