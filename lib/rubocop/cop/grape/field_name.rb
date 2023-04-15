@@ -46,18 +46,25 @@ module RuboCop
         def on_block(node)
           return unless (body = params_block?(node))
 
-          if body.type == :begin
-            body.children.each(&method(:check_field_name))
-          else
-            check_field_name(body)
-          end
+          find_field_node(body)
         end
 
         private
 
+        def find_field_node(node)
+          case node.type
+          when :begin
+            node.each_child_node(&method(:find_field_node))
+          when :block
+            find_field_node(node.send_node)
+            find_field_node(node.body)
+          else
+            check_field_name(node)
+          end
+        end
+
         def check_field_name(node)
-          field = node.children[2]
-          check_name(node, field_name(node), field.source_range)
+          check_name(node, field_name(node), node.first_argument.source_range)
         end
 
         def message(style)

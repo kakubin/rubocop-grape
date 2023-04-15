@@ -14,6 +14,16 @@ RSpec.describe RuboCop::Cop::Grape::FieldName, :config do
       RUBY
     end
 
+    it 'allow snake_case on nested field when snake_case are registered as enforced_style' do
+      expect_no_offenses(<<~RUBY)
+        params do
+          requires :user, type: Hash do
+            requires :phone_number, type: String
+          end
+        end
+      RUBY
+    end
+
     it 'registers an offense when using camelCase on field' do
       expect_offense(<<~RUBY)
         params do
@@ -30,6 +40,28 @@ RSpec.describe RuboCop::Cop::Grape::FieldName, :config do
                    ^^^^^^^^^ Use snake_case for field names.
           optional :phoneNumber, type: String
                    ^^^^^^^^^^^^ Use snake_case for field names.
+        end
+      RUBY
+    end
+
+    it 'registers a offense when using camelCase on field which has children' do
+      expect_offense(<<~RUBY)
+        params do
+          requires :userProfile, type: Hash do
+                   ^^^^^^^^^^^^ Use snake_case for field names.
+            requires :name, type: String
+          end
+        end
+      RUBY
+    end
+
+    it 'registers a offense when using camelCase on a child field' do
+      expect_offense(<<~RUBY)
+        params do
+          requires :user, type: Hash do
+            requires :phoneNumber, type: String
+                     ^^^^^^^^^^^^ Use snake_case for field names.
+          end
         end
       RUBY
     end
