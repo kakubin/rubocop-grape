@@ -64,7 +64,9 @@ module RuboCop
         end
 
         def check_field_name(node)
-          check_name(node, field_name(node), node.first_argument.source_range)
+          return unless (field_name = field_name(node))
+
+          check_name(node, field_name, node.first_argument.source_range)
         end
 
         def message(style)

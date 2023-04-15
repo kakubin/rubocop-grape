@@ -65,6 +65,16 @@ RSpec.describe RuboCop::Cop::Grape::FieldName, :config do
         end
       RUBY
     end
+
+    it 'never consider definitions other than requires and optional' do
+      expect_no_offenses(<<~RUBY)
+        params do
+          optional :login_id, type: String
+          optional :email_address, type: String
+          at_least_one_of :login_id, :email_address
+        end
+      RUBY
+    end
   end
 
   context 'camelCase' do
