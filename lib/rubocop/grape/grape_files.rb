@@ -26,11 +26,11 @@ module RuboCop
           @config.for_all_cops['GrapeDir']
         end
 
-        def roundup_relevant_cops(filename)
+        def roundup_relevant_cops(processed_source)
           super.select do |cop|
             next true unless cop.class.name.match?(/RuboCop::Cop::Grape::.+$/)
 
-            grape_files.include?(filename)
+            grape_files.include?(processed_source.path)
           end
         end
       end
