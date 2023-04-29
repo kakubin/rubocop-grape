@@ -1,6 +1,18 @@
 AllCops:
   GrapeDir: 'app/api'
 
+Grape/AbcSize:
+  Description: >-
+                 A calculated magnitude based on number of assignments,
+                 branches, and conditions.
+  Reference:
+    - http://c2.com/cgi/wiki?AbcMetric
+    - https://en.wikipedia.org/wiki/ABC_Software_Metric
+    - https://www.rubydoc.info/gems/rubocop/0.27.0/RuboCop/Cop/Metrics/AbcSize
+  Enabled: true
+  Max: 20
+  CountRepeatedAttributes: true
+
 Grape/FieldName:
   EnforcedStyle: snake_case
   SupportedStyles:
