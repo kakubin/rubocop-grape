@@ -1,5 +1,8 @@
 ## [Unreleased]
 
+
+## [0.4.0] - 2023-04-29
+
 ### New Features
 * New cop `Grape/AbcSize` checks the ABC metric, based on assignments, branches, and conditions. ([@kakubin][])
 
