@@ -1,5 +1,15 @@
 ## [Unreleased]
 
+### New Features
+* New cop `Grape/AbcSize` checks the ABC metric, based on assignments, branches, and conditions. ([@kakubin][])
+
+
+## [0.3.0] - 2023-04-15
+
+### New Features
+* New cop `Grape/FieldName` checks that all fields use the configured style. ([@kakubin][])
+
+
 ## [0.2.0] - 2022-11-13
 
 ### New Features
@@ -32,3 +42,5 @@
 ## [0.1.0] - 2022-07-13
 
 - Initial release
+
+[@kakubin]: https://github.com/kakubin
