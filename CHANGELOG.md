@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+### Changes
+* Support Ruby 3.3. ([@kakubin][])
 
 ## [0.4.0] - 2023-04-29
 
