@@ -20,11 +20,9 @@ module RuboCop
       #   end
       #
       class ParamsPosition < Base
-        MSG = "It's no sense to define params in HTTP method's scope"
+        include EndpointHelper
 
-        def_node_matcher :params_block?, <<~PATTERN
-          (block (send _ :params) ...)
-        PATTERN
+        MSG = "It's no sense to define params in HTTP method's scope"
 
         def_node_matcher :http_method_node?, <<~PATTERN
           (block (send _ {:get :post :put :patch :delete} ...) ...)
@@ -37,7 +35,7 @@ module RuboCop
         end
 
         def collect_violating_nodes(node, collector = [])
-          collector.push(node) if node.type == :block && params_block?(node)
+          collector.push(node) if node.type == :block && params_node?(node)
 
           node.children.each do |descendant|
             collect_violating_nodes(descendant, collector) if descendant.is_a?(Parser::AST::Node)

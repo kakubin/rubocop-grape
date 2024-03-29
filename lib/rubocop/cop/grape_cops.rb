@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'mixin/endpoint_helper'
+
 require_relative 'grape/abc_size'
 require_relative 'grape/field_name'
 require_relative 'grape/ivar'
