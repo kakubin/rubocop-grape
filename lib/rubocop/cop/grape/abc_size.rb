@@ -9,14 +9,11 @@ module RuboCop
       # and https://en.wikipedia.org/wiki/ABC_Software_Metric.
       class AbcSize < Base
         extend ExcludeLimit
+        include EndpointHelper
 
         exclude_limit 'Max'
 
         MSG = 'Assignment Branch Condition size is too high. [%<abc_vector>s %<complexity>d/%<max>d]'
-
-        def_node_matcher :http_method_node?, <<~PATTERN
-          (block (send _ {:get :post :put :patch :delete} ...) ...)
-        PATTERN
 
         def on_block(node)
           return unless http_method_node?(node)

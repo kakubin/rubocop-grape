@@ -24,10 +24,6 @@ module RuboCop
 
         MSG = "It's no sense to define params in HTTP method's scope"
 
-        def_node_matcher :http_method_node?, <<~PATTERN
-          (block (send _ {:get :post :put :patch :delete} ...) ...)
-        PATTERN
-
         def on_block(node)
           return unless http_method_node?(node)
 
