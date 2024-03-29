@@ -31,20 +31,16 @@ module RuboCop
       #
       class FieldName < Base
         include ConfigurableNaming
-        include RangeHelp
+        include EndpointHelper
 
         MSG = 'Use %<style>s for field names.'
-
-        def_node_matcher :params_block?, <<~PATTERN
-          (block (send _ :params) _ $_)
-        PATTERN
 
         def_node_matcher :field_name, <<~PATTERN
           (send _ {:requires :optional} (sym $_) ...)
         PATTERN
 
         def on_block(node)
-          return unless (body = params_block?(node))
+          return unless (body = params_node?(node))
 
           find_field_node(body)
         end
