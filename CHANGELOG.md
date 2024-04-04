@@ -1,8 +1,15 @@
 ## [Unreleased]
 
+## [0.4.2] - 2024-04-05
+
 ### Changes
 * Support Ruby 3.3. ([@kakubin][])
+
+### New Features
+
 * New cop `Grape/PresentWith` checks mistyped argument on `present` method ([@kakubin][])
+
+## [0.4.1] - skip
 
 ## [0.4.0] - 2023-04-29
 
