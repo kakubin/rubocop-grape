@@ -28,3 +28,9 @@ Grape/ParamsPosition:
   Enabled: true
   Safe: false
   VersionAdded: '0.1'
+
+Grape/PresentWith:
+  Enabled: true
+  Safe: false
+  SafeAutoCorrect: false
+  VersionAdded: '0.4.2'
