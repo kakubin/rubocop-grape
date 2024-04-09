@@ -19,6 +19,9 @@ Grape/FieldName:
     - snake_case
     - camelCase
 
+Grape/RouteParamGrouping:
+  Enabled: true
+
 Grape/RouteParamType:
   Enabled: true
   Safe: false

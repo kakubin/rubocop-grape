@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### New Features
+
+* New cop `Grape/RouteParamGrouping` detects route parameter defined on endpoint ([@kakubin][])
+
 ## [0.4.2] - 2024-04-05
 
 ### Changes
