@@ -21,6 +21,7 @@ Grape/FieldName:
 
 Grape/RouteParamGrouping:
   Enabled: true
+  VersionAdded: '0.4.3'
 
 Grape/RouteParamType:
   Enabled: true
