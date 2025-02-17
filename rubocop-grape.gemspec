@@ -23,8 +23,10 @@ Gem::Specification.new do |spec|
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = spec.homepage
   spec.metadata['changelog_uri'] = 'https://github.com/kakubin/rubocop-grape/blob/master/CHANGELOG.md'
+  spec.metadata['default_lint_roller_plugin'] = 'RuboCop::Grape::Plugin'
 
   spec.files = `git ls-files bin config lib LICENSE.txt README.md`.split($RS)
 
-  spec.add_runtime_dependency 'rubocop', '>= 1.7.0', '< 2.0'
+  spec.add_runtime_dependency 'lint_roller', '~> 1.1'
+  spec.add_runtime_dependency 'rubocop', '>= 1.72.1', '< 2'
 end
