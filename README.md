@@ -26,19 +26,22 @@ ways to do this:
 Put this into your `.rubocop.yml`.
 
 ```yaml
-require: rubocop-grape
+plugins: rubocop-grape
 ```
 
 Alternatively, use the following array notation when specifying multiple extensions.
 
 ```yaml
-require:
+plugins:
   - rubocop-other-extension
   - rubocop-grape
 ```
 
 Now you can run `rubocop` and it will automatically load the RuboCop Grape
 cops together with the standard cops.
+
+> [!NOTE]
+> The plugin system is supported in RuboCop 1.72+. In earlier versions, use `require` instead of `plugins`.
 
 ## Contributing
 

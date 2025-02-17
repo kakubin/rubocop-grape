@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- Pluginfy RuboCop Grape. ([@kakubin][])
+
 ## [0.4.3] - 2024-04-09
 
 ### New Features
